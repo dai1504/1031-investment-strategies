@@ -1,0 +1,27 @@
+.loading
+    &-container 
+        position: fixed
+        background: linear-gradient(30deg, $color-primary , #233754  , $color-primary) 
+        display: flex
+        justify-content: center
+        align-items: center
+        z-index: 999999
+        width: 100vw
+        height: 100vh
+        padding: 30px
+        svg 
+            width: 100%
+            overflow: unset
+            max-width: 500px
+            opacity: 0
+            .ld-ic-t
+                transform-box: content-box
+                transform-origin: bottom
+            .ld-number
+                *
+                    transform-box: content-box
+                    transform-origin: center
+            .ld-text-small 
+                *
+                    transform-box: content-box
+                    transform-origin: center

@@ -1,0 +1,60 @@
+.blog
+    &-section
+        padding: size-pc(80,rem) 0
+    &-item
+        margin-bottom: size-pc(20,rem)
+    &-img
+        display: block 
+        @include thumb-img(60%,cover)
+        margin-bottom: size-pc(20,rem)
+        overflow: hidden
+        border-radius: size-pc(80,rem) size-pc(20,rem) 
+        
+            
+        &:hover 
+            img 
+                transform: scale(1.05)
+    &-content 
+        padding: size-pc(10,rem)
+        h3 
+            font-size: size-pc(28,rem)
+            overflow: hidden
+            text-overflow: ellipsis
+            display: -webkit-box
+            -webkit-line-clamp: 2
+            -webkit-box-orient: vertical
+            a
+                &:hover 
+                    color: $color-primary
+        p 
+            font-size: size-pc(22,rem)
+            overflow: hidden
+            text-overflow: ellipsis
+            display: -webkit-box
+            -webkit-line-clamp: 3
+            -webkit-box-orient: vertical
+    &-top 
+        padding-bottom: size-pc(70,rem)
+        display: flex
+        flex-wrap: wrap
+        justify-content: space-between
+        align-items: center
+        @media screen and ( max-width: 767.82px )
+            flex-direction: column
+        .content
+            h2 
+                margin-bottom: 0
+                @media screen and ( max-width: 767.82px )
+                    text-align: center
+    &-navigation 
+        display: flex
+        margin: 0 -5px
+        .btn-nav 
+            margin: 0 5px
+            font-size: size-pc(50,rem)
+            transition: all .3s ease
+            &.swiper-button-disabled
+                opacity: 0.3
+                cursor: not-allowed
+            &:hover 
+                color: $color-primary

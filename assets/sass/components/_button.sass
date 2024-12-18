@@ -1,0 +1,232 @@
+.btn
+    display: block
+    padding: size-pc(14, rem) size-pc(40, rem)
+    border: 1px solid 
+    border-radius: size-pc(40, rem)
+    font-size: size-pc(22, rem)
+    font-weight: $font-medium
+    font-family: $font-link
+    background-color: $color-btn
+    color: #fff
+    border-color: $color-btn
+    transition: all .3s ease
+    white-space: nowrap
+    margin-bottom: 20px
+    position: relative
+    overflow: hidden
+    // text-transform: uppercase
+    @media screen and ( max-width: 767.82px )
+        padding: size-pc(10, rem) size-pc(15, rem)
+    i 
+      margin-left: 8px
+    &:hover
+        color: #fff
+        border-color: $color-btn
+        
+    &-light
+        &-outline
+            background-color: transparent
+            border-color: #fff
+            color: #fff
+            &:hover 
+                background-color: $color-btn
+                color: #fff
+                border-color: $color-btn
+            &._hover-white
+              &:hover 
+                background-color: #fff
+                border-color: #fff
+                color: $color-text
+    &-dark
+        &-outline
+            background-color: transparent
+            border-color: $color-text
+            color: $color-text
+            &:hover 
+                background-color: $color-btn
+                color: #fff
+                border-color: $color-btn
+    &-circle 
+        border-radius: 100%
+        width: size-pc(150, rem)
+        height: size-pc(150, rem)
+        display: flex
+        align-items: center
+        justify-content: center
+        text-transform: uppercase
+        background-color: $color-2
+        border-color: $color-2
+        color: #fff
+        
+        &:before, &:after
+            background-color: $color-primary
+        &:hover 
+            transition-delay: .4s
+            // background-color: $color-primary
+            color: #fff
+            border-color: $color-primary
+    
+    &-site
+        width: fit-content
+        display: block
+        padding: size-pc(18, rem) size-pc(40, rem)
+        border: 1px solid 
+        border-radius: size-pc(40, rem)
+        font-size: size-pc(20, rem)
+        background-color: $color-btn
+        color: #fff
+        border-color: $color-btn
+        transition: all .3s ease
+        white-space: nowrap
+ 
+        margin-bottom: 20px
+        @media screen and ( max-width: 767.82px )
+          padding: size-pc(10, rem) size-pc(15, rem)
+        &:hover 
+            background-color: #fff
+            border-color: $color-btn
+            color: $color-btn
+           
+        i 
+            margin-left: 8px
+    &-white 
+        border-color: #fff
+        background-color: #fff
+        color: $color-text
+        &:hover
+            background-color: $color-btn
+            color: #fff
+            border-color: $color-btn
+    &-dark
+        border-color: $color-text
+        background-color: $color-text
+        color: #fff
+        &:hover
+            background-color: #fff
+            color: $color-text
+            border-color: $color-btn
+
+.link-read 
+    color: $color-btn
+    font-weight: 600
+    width: fit-content
+    position: relative
+    text-align: center
+    padding: 0 size-pc(40, rem) size-pc(20, rem)
+    span
+        display: block
+        position: absolute
+        bottom: 0
+        width: 100%
+        height: 1px 
+        left: 0
+        background-color: $color-btn
+        &::before,&::after
+            
+            content: ''
+            background-color: $color-btn
+            width: 11px
+            height: 10px
+            position: absolute
+            
+            top: 50%
+            transform: translateY(-50%)
+        &::before
+            clip-path: polygon(0 0, 0% 100%, 100% 50%)
+            left: 0
+        &::after
+            clip-path: polygon(100% 0, 100% 100%, 0 50%)
+            right: 0
+
+
+@-webkit-keyframes criss-cross-left
+  0%
+    left: -20px
+
+  50%
+    left: 50%
+    width: 20px
+    height: 20px
+
+  100%
+    left: 50%
+    width: 375px
+    height: 375px
+
+@keyframes criss-cross-left
+  0%
+    left: -20px
+
+  50%
+    left: 50%
+    width: 20px
+    height: 20px
+
+  100%
+    left: 50%
+    width: 375px
+    height: 375px
+
+@-webkit-keyframes criss-cross-right
+  0%
+    right: -20px
+
+  50%
+    right: 50%
+    width: 20px
+    height: 20px
+
+  100%
+    right: 50%
+    width: 375px
+    height: 375px
+
+@keyframes criss-cross-right
+  0%
+    right: -20px
+
+  50%
+    right: 50%
+    width: 20px
+    height: 20px
+
+  100%
+    right: 50%
+    width: 375px
+    height: 375px
+
+.btn-11
+  position: relative
+  color: #91cfc9
+
+  &:before, &:after
+    position: absolute
+    top: 50%
+    content: ""
+    width: 20px
+    height: 20px
+    background-color: #7dc7c0
+    border-radius: 50%
+
+  &:before
+    left: -20px
+    transform: translate(-50%, -50%)
+
+  &:after
+    right: -20px
+    transform: translate(50%, -50%)
+
+  &:hover
+    color: #dff1ef
+
+    &:before
+      -webkit-animation: criss-cross-left 0.8s both
+      animation: criss-cross-left 0.8s both
+      -webkit-animation-direction: alternate
+      animation-direction: alternate
+
+    &:after
+      -webkit-animation: criss-cross-right 0.8s both
+      animation: criss-cross-right 0.8s both
+      -webkit-animation-direction: alternate
+      animation-direction: alternate

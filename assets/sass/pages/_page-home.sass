@@ -1,0 +1,876 @@
+@keyframes banner-animation
+    0%
+        transform: scale(1)   
+    50%
+        transform: scale(1.05)
+    100%
+        transform: scale(1)
+.home-banner
+    &-section
+        min-height: 100vh
+        position: relative
+        display: flex
+        align-items: flex-end
+        padding: size-pc(100,rem) 0 0 0
+        .bg
+            position: absolute
+            width: 100%
+            height: 100%
+            top: 0
+            left: 0
+            z-index: 1
+            overflow: hidden
+            img 
+                position: absolute
+                width: 100%
+                height: 100%
+                top: 0
+                left: 0
+                object-fit: cover
+                z-index: 1
+                animation: banner-animation infinite 15s
+            &::before
+                z-index: 2
+                position: absolute
+                width: 100%
+                height: 100%
+                top: 0
+                left: 0
+                content: ''
+                background: linear-gradient(60deg, $color-primary, transparent)
+                opacity: 0.3
+            &::after
+                z-index: 3
+                position: absolute
+                width: 100%
+                height: 100%
+                top: 0
+                left: 0
+                content: ''
+                background: rgba($color-primary,0.5)
+        .container
+            position: relative
+            z-index: 3
+            color: #fff
+        .content
+            h1
+                color: #fff
+                font-size: size-pc(70, rem)
+                @media screen and ( max-width: 767.82px )
+                    font-size: size-pc(60,rem)
+                @media screen and ( max-width: 575.82px )
+                    font-size: size-pc(55,rem)
+            h3 
+                color: #fff
+            p 
+                font-size: size-pc(28, rem)
+                @media screen and ( max-width: 767.82px )
+                    font-size: size-pc(26, rem)
+                @media screen and ( max-width: 575.82px )
+                    font-size: size-pc(24, rem)
+            &.bg-content
+                width: calc( 100% + size-pc(150,rem))
+                background-color: $color-primary
+                margin-right: size-pc(-150,rem)
+                padding: size-pc(80,rem) size-pc(150,rem) size-pc(80,rem) size-pc(80,rem)
+                @media screen and ( max-width: 991.82px )
+                    margin-top: size-pc(80,rem)
+                @media screen and ( max-width: 767.82px )
+                    width: 100%
+                    padding: size-pc(50,rem) size-pc(50,rem) size-pc(50,rem) size-pc(50,rem)
+                p 
+                    font-size: size-pc(28, rem)
+                    @media screen and ( max-width: 767.82px )
+                        font-size: size-pc(26, rem)
+                    @media screen and ( max-width: 575.82px )
+                        font-size: size-pc(24, rem)
+                ul 
+                    li 
+                        font-size: size-pc(28, rem)
+                        @media screen and ( max-width: 767.82px )
+                            font-size: size-pc(26, rem)
+                        @media screen and ( max-width: 575.82px )
+                            font-size: size-pc(24, rem)
+                    
+        .line-banner
+            --bs-gutter-x: 1.5rem
+            position: absolute
+            width: calc(100vw  - (var(--bs-gutter-x)))
+            height: 100%
+            left: 50%
+            top: 0
+            transform: translateX(-50%)
+            z-index: 1
+            pointer-events: none
+            overflow: hidden
+            @media (min-width: 576px) 
+                max-width: calc(540px - (var(--bs-gutter-x)))
+            @media (min-width: 768px) 
+                max-width: calc(720px  - (var(--bs-gutter-x)))
+            @media (min-width: 992px) 
+                max-width: calc(960px  - (var(--bs-gutter-x)))
+            @media (min-width: 1200px) 
+                max-width: calc( 1140px - (var(--bs-gutter-x)))
+            @media (min-width: 1400px) 
+                max-width: calc( 1320px - (var(--bs-gutter-x)) )
+
+            .line 
+                position: absolute
+                height: 100%
+                top: 0
+                width: 1px 
+                background-color: rgba(#fff,0.2)
+                
+                .line-drop
+                    position: absolute
+                    width: 2px
+                    height: 80px
+                    background: linear-gradient(to top, rgba(#fff,1), transparent)
+            
+                    top: 0
+                    left: -0.5px
+                &-1
+                    left: 0
+                &-2 
+                    left: calc(100% / 3 - 0.5px )
+                &-3
+                    left: calc(100% / 1.5 - 0.5px )
+                &-4
+                    right: 0
+                    
+.benefit
+    &-section 
+        padding: size-pc(150, rem) 0
+        @media screen and ( max-width: 767.82px )
+            padding: size-pc(100, rem) 0
+    &-item 
+        background-color: #EBEDF1
+        display: flex
+        flex-direction: column
+        padding: size-pc(30, rem)
+        border: 1px solid #D1D1D1
+        border-width: 1px 0px 0px 0px
+        width: 100%
+        transition: background .3s ease
+        @media screen and ( min-width: 576px )
+            border-width: 0 1px 1px 0px
+            
+                
+        &:hover 
+            background-color: $color-primary
+            .benefit
+                &-icon
+                    .btn
+                        opacity: 1
+                &-content 
+                    color: #fff
+    &-row 
+        [class*='col-']
+            @media screen and ( min-width: 768px )
+                &:nth-child(3n)
+                    .benefit
+                        &-item 
+                            border-width: 0 0px 1px 0px
+                    &:nth-last-child(-n+3)
+                        .benefit
+                            &-item 
+                                border-width: 0 0px 0px 0px
+                &:nth-last-child(-n+3)
+                    .benefit
+                        &-item 
+                            border-width: 0 1px 0px 0px
+            @media screen and ( min-width: 576px ) and (max-width: 767.82px)
+                .benefit
+                    &-item
+                        border-width: 0 1px 1px 0px!important
+                &:nth-child(2n)
+                    .benefit
+                        &-item 
+                            border-width: 0 0px 1px 0px!important
+                    &:nth-last-child(-n+2)
+                        .benefit
+                            &-item 
+                                border-width: 0 0px 0px 0px!important
+                &:nth-last-child(-n+2)
+                    .benefit
+                        &-item 
+                            border-width: 0 1px 0px 0px!important
+                &:last-child
+                    &:nth-last-child(-n+2)
+                        .benefit
+                            &-item 
+                                border-width: 0 0px 0px 0px!important
+            @media screen and ( max-width: 575.82px )
+                &:first-child
+                    .benefit
+                        &-item 
+                            border-top: 0
+
+
+                
+                
+            
+
+    &-icon 
+        display: flex
+        justify-content: space-between
+        margin-bottom: size-pc(20,rem)
+        align-items: center
+        @media screen and ( max-width: 767.82px )
+            margin-bottom: size-pc(30,rem)
+        img  
+            object-fit: contain
+            width: size-pc(65,rem)
+            height: size-pc(65,rem)
+        .btn
+            line-height: 1
+            display: flex
+            align-items: center
+            margin-bottom: 0
+            opacity: 0
+            @media screen and ( max-width: 767.82px )
+                opacity: 1
+                
+            &:hover 
+                border-color: #fff
+    &-content 
+        h3 
+            font-weight: $font-regular
+            font-size: size-pc(32,rem)
+            margin-bottom: size-pc(15,rem)
+            @media screen and ( max-width: 767.82px )
+                font-size: size-pc(28,rem)
+        ul 
+            list-style: disc
+            padding-left: 15px
+            li
+                margin-bottom: 10px
+                font-size: size-pc(23,rem)
+                &:last-child
+                    margin-bottom: 0
+
+.offer
+    &-section 
+        padding: size-pc(150, rem) 0
+        @media screen and ( max-width: 767.82px )
+            padding: size-pc(100, rem) 0
+    &-item 
+        display: flex
+        flex-direction: column
+        width: 100%
+        .img 
+            @include thumb-img(80%,cover)
+            overflow: hidden
+            img 
+                transition: all 1s ease
+        &:hover 
+            transform: translateY(-10px)
+            .img 
+                img 
+                    transform: scale(1.05)
+            .offer
+                &-top
+                    &-icon 
+                        i 
+                            transform: rotate(90deg)
+
+    &-slide 
+        overflow: unset
+        &-number 
+            padding-top: size-pc(80,rem)
+            display: flex
+            flex-direction: column
+            .swiper-scrollbar
+                background: rgba(#000,0.3)
+            .swiper-scrollbar.swiper-scrollbar-horizontal
+                position: relative
+                width: 100%
+                top: unset
+                bottom: unset
+                height: 2px
+                left: unset
+            .swiper-scrollbar-drag
+                background: $color-primary
+                height: 4px
+                margin-top: -1px
+            &-box
+                display: flex
+                justify-content: space-between
+                padding-top: size-pc(40,rem)
+                align-items: center
+                .swiper-pagination
+                    position: relative
+                    top: unset
+                    bottom: unset
+                    left: unset
+                    transform: unset
+                    width: auto
+                    font-weight: $font-semibold
+                    color: $color-primary
+                    font-size: size-pc(32,rem)
+                    @media screen and ( max-width: 991.82px )
+                        font-size: size-pc(30,rem)
+                    @media screen and ( max-width: 767.82px )
+                        font-size: size-pc(28,rem)
+                    @media screen and ( max-width: 575.82px )
+                        font-size: size-pc(26,rem)
+                    .swiper-pagination-current
+                        font-weight: $font-light
+                .btn 
+                    margin-bottom: 0
+    &-content 
+        background-color: $color-primary
+        color: #fff
+        padding: size-pc(30,rem)
+   
+    &-top 
+        width: 100%
+        display: flex
+        justify-content: space-between
+        margin-bottom: size-pc(30,rem)
+        &-content 
+            .offer-address
+                text-transform: uppercase
+                letter-spacing: size-pc(5,rem)
+                font-weight: $font-semibold
+                font-size: size-pc(24,rem)
+            .offer-cate
+                font-weight: $font-semibold
+                font-size: size-pc(24,rem)
+        &-icon 
+            
+            font-size: size-pc(35,rem)
+            i 
+                transform: rotate(45deg)
+                transition: transform .3s ease
+    &-title 
+        font-weight: $font-semibold
+        font-size: size-pc(35,rem)
+
+.square
+    &-section
+        &-revert
+            .square
+                &-grid 
+                    .square
+                        &-item 
+                            
+                            &:nth-child(4)
+                                grid-column: 3 / span 2
+                                grid-row: 1 / span 2
+                                color: #fff
+                                @media screen and ( max-width: 991.82px )
+                                    grid-column: 1 / span 4
+                                    grid-row: auto
+                                    padding-bottom: 100%
+                                
+                            &:nth-child(3)
+                                background-color: #EBEDF1
+                                color: $color-text
+                            &:nth-child(2)
+                                background-color: $color-primary
+                                color: #fff
+                            &:nth-child(1)
+                                padding-bottom: 50%
+                                grid-column: 1 / span 2
+                                grid-row: 1 / span 1
+                                color: #fff
+                                @media screen and ( max-width: 991.82px )
+                                    grid-column: 1 / span 4
+
+
+    &-grid
+        display: grid
+        grid-template-columns: repeat(4, 1fr)
+        grid-template-rows: repeat(2, 2fr)
+        .square
+            &-item 
+                
+                &:nth-child(1)
+                    grid-column: 1 / span 2
+                    grid-row: 1 / span 2
+                    @media screen and ( max-width: 991.82px )
+                        grid-column: 1 / span 4
+                    
+                    
+                &:nth-child(2)
+                    background-color: #EBEDF1
+                    color: $color-text
+                    @media screen and ( max-width: 991.82px )
+                        grid-column: 1 / span 2
+                &:nth-child(3)
+                    background-color: $color-primary
+                    @media screen and ( max-width: 991.82px )
+                        grid-column: 3 / span 2
+                &:nth-child(4)
+                    padding-bottom: 50%
+                    grid-column: 3 / span 2
+                    grid-row: 2 / span 1
+                    color: $color-text
+                    @media screen and ( max-width: 991.82px )
+                        grid-column: 1 / span 4
+                        grid-row: 4 / span 1
+
+                    
+    &-item 
+        position: relative
+        width: 100%
+        padding-bottom: 100%
+        color: #fff
+        .bg
+            @include thumb-img(100%, cover)
+            position: absolute
+            top: 0
+            left: 0
+            width: 100%
+            height: 100%
+            padding-bottom: unset
+            z-index: 1
+            .overlay,.overlay-dark
+                position: absolute
+                top: 0
+                left: 0
+                width: 100%
+                height: 100%
+                background: linear-gradient(120deg, $color-primary, transparent)
+            .overlay-dark
+                background: linear-gradient(120deg, #000, transparent)
+        .bg-ar
+            position: absolute
+            bottom: 0
+            left: 0
+            width: 60%
+            height: 50%
+            z-index: 3
+            pointer-events: none
+            mix-blend-mode: screen
+            .ar 
+                width: 100%
+                height: 100%
+                object-fit: contain
+                object-position: bottom
+                position: absolute
+                bottom: 0
+                left: 0
+        .icon-ar 
+            position: absolute
+            bottom: 10%
+            right: 10%
+            font-size: size-pc(42,rem)
+            z-index: 2
+            i 
+                transform: rotate(-45deg)
+    &-content
+        position: absolute
+        width: 100%
+        height: 100%
+        top: 0
+        left: 0
+        padding: size-pc(60,rem)
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        z-index: 2
+        @media screen and ( max-width: 1199.82px )
+            padding: size-pc(40,rem)
+        h2 
+            font-weight: $font-medium
+            font-size: size-pc(65,rem)
+            @media screen and ( max-width: 1199.82px )
+                font-size: size-pc(55,rem)
+            @media screen and ( max-width: 991.82px )
+                font-size: size-pc(45,rem)
+            @media screen and ( max-width: 500px )
+                font-size: size-pc(35,rem)
+        h3 
+            font-weight: $font-medium
+            font-size: size-pc(42,rem)
+            @media screen and ( max-width: 1199.82px )
+                font-size: size-pc(35,rem)
+            @media screen and ( max-width: 991.82px )
+                font-size: size-pc(30,rem)
+            @media screen and ( max-width: 500px )
+                font-size: size-pc(25,rem)
+        p 
+            font-size: size-pc(23,rem)
+            display: -webkit-box
+            -webkit-line-clamp: 2
+            -webkit-box-orient: vertical
+            overflow: hidden
+            text-overflow: ellipsis
+            @media screen and ( max-width: 500px )
+                font-size: size-pc(22,rem)
+        .btn 
+            width: fit-content
+            margin-bottom: 0
+    
+
+
+.quest
+    &-section
+        padding: size-pc(150, rem) 0
+        @media screen and ( max-width: 767.82px )
+            padding: size-pc(100, rem) 0
+    &-item 
+        // margin-bottom: size-pc(30, rem)
+    &-img 
+        display: block
+        @include thumb-img(60%,cover)
+        overflow: hidden
+        img
+            transition: all 1s ease
+        &:hover
+            img 
+                transform: scale(1.05)
+
+    &-content 
+        padding: size-pc(50, rem) 0 0
+        display: flex
+        width: 100%
+        @media screen and ( max-width: 767.82px )
+            flex-direction: column
+        h2
+            font-size: size-pc(48, rem)
+            @media screen and ( max-width: 767.82px )
+                font-size: size-pc(35, rem)
+        p
+            font-size: size-pc(23, rem)
+    &-text 
+        padding-right: size-pc(120, rem)
+        width: 100%
+    &-btn 
+        margin-right: size-pc(30, rem)
+            
+
+
+.testimonial
+    &-section
+        margin-top: size-pc(80, rem)
+        padding: size-pc(100, rem) 0r
+    &-slide
+        width: calc(100% - size-pc(120, rem))
+        position: relative
+        padding: size-pc(120, rem) size-pc(120, rem) size-pc(120, rem) 0
+        margin-right: size-pc(120, rem)
+        display: flex
+        align-items: center
+        @media screen and ( max-width: 991.82px )
+            padding: size-pc(80, rem) size-pc(80, rem) size-pc(80, rem) size-pc(80, rem)
+            width: 100%
+            margin-right: 0
+        @media screen and ( max-width: 767.82px )
+            padding: size-pc(50, rem) size-pc(50, rem) size-pc(50, rem) size-pc(50, rem)
+        .bg
+            position: absolute
+            z-index: 0
+            top: 0
+            left: size-pc(-120, rem)
+            right: 0
+            bottom: 0
+            overflow: hidden
+            @media screen and ( max-width: 991.82px )
+                left: 0
+            img 
+                position: absolute
+                width: 100%
+                height: 100%
+                top: 0
+                left: 0
+                object-fit: cover
+        &-box
+            width: 100%
+            padding: size-pc(100, rem)
+            position: relative
+            z-index: 1
+            background-color: $color-primary
+            color: #fff
+            @media screen and ( max-width: 991.82px )
+                padding: size-pc(80, rem)
+            @media screen and ( max-width: 767.82px )
+                padding: size-pc(40, rem)
+            &::before
+                position: absolute
+                background-image: url(../images/home/el-t.svg)
+                width: size-pc(250, rem)
+                height: size-pc(250, rem)
+                content: ''
+                left: size-pc(70, rem)
+                top: size-pc(70, rem)
+                background-size: contain
+                background-repeat: no-repeat
+                @media screen and ( max-width: 767.82px )
+                    left: size-pc(20, rem)
+                    top: size-pc(20, rem)
+        &-item 
+            
+            p 
+                font-size: size-pc(28, rem)
+                @media screen and ( max-width: 767.82px )
+                    font-size: size-pc(24, rem)
+        &-name
+            margin-top: size-pc(100, rem)
+            h3 
+                font-size: size-pc(30, rem)
+                @media screen and ( max-width: 767.82px )
+                    font-size: size-pc(26, rem)
+            h4 
+                font-size: size-pc(26, rem)
+                color: rgba(#fff,0.6)
+                @media screen and ( max-width: 767.82px )
+                    font-size: size-pc(23, rem)
+                    
+    &-content
+        &-right 
+            display: flex
+            flex-direction: column
+            justify-content: space-between
+            @media screen and ( max-width: 991.82px )
+                margin-top: size-pc(60, rem)
+            &-title 
+                h2 
+                    font-size: size-pc(120, rem)
+                    line-height: 1
+                    margin-bottom: size-pc(40, rem)
+                    @media screen and ( max-width: 767.82px )
+                        font-size: size-pc(100, rem)
+                h3 
+                    font-size: size-pc(40, rem)
+                    @media screen and ( max-width: 767.82px )
+                        font-size: size-pc(35, rem)
+            &-desc 
+                p 
+                    font-size: size-pc(23, rem)
+                .btn 
+                    margin-bottom: 0
+    &-nav 
+        display: flex
+        width: fit-content
+        position: absolute
+        right: 0
+        bottom: size-pc(10, rem)
+        .swiper-button-next,.swiper-button-prev 
+            position: relative
+            left: unset
+            right: unset
+            color: #fff
+            border: 1px solid #fff
+            border-radius: 100%
+            width: size-pc(65, rem)
+            height: size-pc(65, rem)
+            margin: 0 5px
+            display: flex
+            align-items: center
+            justify-content: center
+            &::after
+                font-size: size-pc(30, rem)
+.count
+    &-section
+        padding: size-pc(150, rem) 0
+        @media screen and ( max-width: 767.82px )
+            padding: size-pc(100, rem) 0 size-pc(50, rem)
+        .content 
+            position: relative
+            padding-bottom: size-pc(50, rem)
+            margin-bottom: size-pc(80, rem)
+            @media screen and ( max-width: 767.82px )
+                padding-bottom: size-pc(40, rem)
+                margin-bottom: size-pc(50, rem)
+            h2 
+                margin-bottom: 0
+            &::after
+                height: 1px
+                background-color: #2A2A2A
+                width: 100%
+                max-width: size-pc(450, rem)
+                content: ''
+                position: absolute
+                bottom: 0
+                left: 0
+                opacity: 0.4
+    &-item 
+        display: flex
+        @media screen and ( max-width: 767.82px )
+            margin-bottom: size-pc(50, rem)
+    &-number 
+        font-size: size-pc(90, rem)
+        padding-right: size-pc(40, rem)
+        margin-right: size-pc(40, rem)
+        border-right: 1px solid rgba(#333752,0.4)
+        width: size-pc(180, rem)
+        flex: 0 0 size-pc(180, rem)
+    &-text 
+        font-size: size-pc(26, rem)
+        padding-right: size-pc(30, rem)
+        p
+            font-size: size-pc(26, rem)
+            margin-bottom: 0
+
+.blog
+    &-section
+        padding: size-pc(150, rem) 0
+        background-size: cover
+        position: relative
+        background-position: center
+        @media screen and ( max-width: 767.82px )
+            padding: size-pc(100, rem) 0
+        &::before
+            position: absolute
+            width: 100%
+            height: 100%
+            top: 0
+            left: 0
+            content: ''
+            background-color: $color-primary 
+            opacity: 0.7
+            z-index: 0
+        .content 
+            color: #fff
+            position: relative
+            z-index: 1
+            @media screen and ( max-width: 991.82px )
+                margin-bottom: size-pc(50, rem)
+            h4
+                border: 1px solid #fff
+                border-radius: size-pc(150, rem)
+                padding: size-pc(20, rem) size-pc(30, rem)
+                font-size: size-pc(22, rem)
+                line-height: 1
+                width: fit-content
+                margin-bottom: size-pc(50, rem)
+            h2
+                color: #fff
+                margin-bottom: size-pc(50, rem)
+            .btn 
+                width: fit-content
+    &-slide
+        // overflow: unset
+        .swiper
+            overflow: unset
+            clip-path: inset(-100vw -100vw -100vw 0px)
+        .swiper-slide 
+            height: unset
+            display: flex
+            max-width: size-pc(460, rem)
+            
+    &-item 
+        width: 100%
+        display: flex
+        flex-direction: column
+    &-img 
+        display: flex
+        width: 100%
+        @include thumb-img(55%,cover)
+        overflow: hidden
+        img 
+            transition: all 1s ease
+        &:hover
+            img 
+                transform: scale(1.05)
+    &-content 
+        background-color: #fff
+        padding: size-pc(30, rem)
+        flex: 1 0 auto
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+    &-cate 
+        display: flex
+        margin-bottom: size-pc(20, rem)
+        align-items: center
+        a 
+            line-height: 1.2
+            font-size: size-pc(20, rem)
+            display: block
+            &:hover 
+                color: $color-primary
+        p 
+            font-size: size-pc(22, rem)
+            line-height: 1.2
+            margin-bottom: 0
+            border-left: 1px solid $color-text
+            padding-left: 10px 
+            margin-left: 10px
+    &-top 
+        margin-bottom: size-pc(50, rem)
+        padding-right: size-pc(50, rem)
+        h3 
+            font-size: size-pc(32, rem)
+            a 
+                &:hover 
+                    color: $color-primary
+
+    &-bottom 
+        font-size: size-pc(22, rem)
+        color: #878787
+    &-scrollbar
+        margin-bottom: size-pc(50, rem)
+        .swiper-scrollbar
+            position: relative
+            left: unset
+            top: unset
+            right: unset
+            bottom: unset
+            background: rgba(#fff,0.5)
+            height: 3px
+        .swiper-scrollbar-drag
+            background: #fff
+            height: 5px
+            top: -1px
+            
+
+.team
+    &-section
+        position: relative
+        z-index: 2
+        background-color: #EBEDF1 
+        padding: size-pc(150, rem) 0
+        @media screen and ( max-width: 767.82px )
+            padding: size-pc(100, rem) 0
+        .btn
+            margin-bottom: 0
+    &-item 
+        display: flex
+        align-items: center
+        margin-bottom: size-pc(100, rem)
+        @media screen and ( max-width: 767.82px )
+            margin-bottom: size-pc(60, rem)
+    &-contact 
+        li 
+            display: flex
+            margin-bottom: 10px
+            font-size: size-pc(23, rem)
+            align-items: center
+            i 
+                margin-right: 10px
+                width: size-pc(30, rem)
+            a 
+                &:hover 
+                    color: $color-primary
+    &-content 
+        h3 
+            font-size: size-pc(42, rem)
+            margin-bottom: size-pc(30, rem)
+            @media screen and ( max-width: 767.82px )
+                font-size: size-pc(35, rem)
+                margin-bottom: size-pc(20, rem)
+    &-img 
+        width: size-pc(200, rem)
+        height: size-pc(200, rem)
+        flex: 0 0 size-pc(200, rem)
+        border-radius: 100%
+        overflow: hidden
+        position: relative
+        margin-right: size-pc(40, rem)
+        @media screen and ( max-width: 767.82px )
+            width: size-pc(150, rem)
+            height: size-pc(150, rem)
+            flex: 0 0 size-pc(150, rem)
+            margin-right: size-pc(30, rem)
+        img 
+            position: absolute
+            width: 100%
+            height: 100%
+            top: 0
+            left: 0
+            object-fit: cover
+

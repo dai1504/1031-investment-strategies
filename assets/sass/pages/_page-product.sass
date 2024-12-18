@@ -1,0 +1,125 @@
+.product
+    &-section 
+        padding: size-pc(100,rem) 0
+        @media screen and ( max-width: 767.82px )
+            padding: size-pc(50,rem) 0 
+        .sps-image
+            @include thumb-img(100%, contain)
+            cursor: zoom-in
+            background-color: #f2f2f2
+        .single-product-slider-thumbs .sps-thumb
+            background-color: #f2f2f2
+    &-top 
+        padding-bottom: size-pc(70,rem)
+        display: flex
+        flex-wrap: wrap
+        justify-content: space-between
+        align-items: center
+        @media screen and ( max-width: 767.82px )
+            flex-direction: column
+        .content
+            h2 
+                font-size: size-pc(70,rem)
+                font-weight: $font-extrabold
+                @media screen and ( max-width: 767.82px )
+                    font-size: size-pc(55,rem)
+                    text-align: center
+            h3 
+                font-size: size-pc(44,rem)
+                @media screen and ( max-width: 767.82px )
+               
+                    text-align: center
+    &-navigation 
+        display: flex
+        margin: 0 -5px
+        .btn-nav 
+            margin: 0 5px
+            font-size: size-pc(50,rem)
+            transition: all .3s ease
+            &.swiper-button-disabled
+                opacity: 0.3
+                cursor: not-allowed
+            &:hover 
+                color: $color-primary
+    &-relate
+        &-navigation 
+            display: flex
+            margin: 0 -5px
+            .btn-nav 
+                margin: 0 5px
+                font-size: size-pc(50,rem)
+                transition: all .3s ease
+                &.swiper-button-disabled
+                    opacity: 0.3
+                    cursor: not-allowed
+                &:hover 
+                    color: $color-primary
+
+    &-item 
+    
+    &-img 
+        display: block
+        @include thumb-img(120%,contain)
+        img 
+            transition: all .3s ease
+            background-color: #fff
+            &:nth-of-type(1)
+                opacity: 1
+            &:nth-of-type(2)
+                opacity: 0
+        &:hover 
+            img 
+                // &:nth-of-type(1)
+                //     opacity: 0
+                &:nth-of-type(2)
+                    opacity: 1
+                
+    &-content 
+        margin-top: size-pc(40,rem)
+        @media screen and ( max-width: 767.82px )
+            text-align: center
+        .btn-site
+            margin-top: size-pc(15,rem)
+            @media screen and ( max-width: 767.82px )
+                margin-left: auto 
+                margin-right: auto
+    &-cate 
+        font-size: size-pc(18,rem)
+        font-weight: $font-regular
+        display: block
+        margin-bottom: size-pc(10,rem)
+    &-title 
+        
+        h3 
+            font-size: size-pc(26.5,rem)
+            font-weight: $font-bold
+            text-transform: uppercase
+            margin-bottom: size-pc(15,rem)
+            transition: all .3s ease
+            @media screen and ( max-width: 575.82px )
+                font-size: size-pc(24,rem)
+        &:hover 
+            h3 
+                color: $color-primary
+    &-price 
+        color: $color-primary
+        font-weight: $font-semibold
+        font-size: size-pc(27,rem)
+        @media screen and ( max-width: 575.82px )
+            font-size: size-pc(25,rem)
+        
+
+    &-list 
+        padding: size-pc(50,rem) 0 
+        > .container
+            > .row 
+                margin: 0 size-pc(-50,rem)
+                > *
+                    padding-left: size-pc(50,rem)
+                    padding-right: size-pc(50,rem)
+        &-container
+            .row 
+                margin: 0 size-pc(-50,rem)
+                > *
+                    padding-left: size-pc(50,rem)
+                    padding-right: size-pc(50,rem)
